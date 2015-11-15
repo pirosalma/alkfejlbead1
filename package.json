@@ -20,6 +20,6 @@
     "sails-memory": "^0.10.5",
     "sails-postgresql": "^0.10.16",
     "should": "^7.1.1",
-    "waterline": "^0.10.26",
+    "waterline": "^0.10.26"
   }
 }
