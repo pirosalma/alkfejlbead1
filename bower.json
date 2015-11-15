@@ -1,0 +1,19 @@
+{
+  "name": "bead1",
+  "version": "0.0.0",
+  "authors": [
+    "kovacsmartin <kovacsmartin95@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootswatch": "~3.3.5+3"
+  }
+}

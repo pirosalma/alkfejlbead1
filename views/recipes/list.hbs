@@ -1,0 +1,38 @@
+{{#each messages}}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{this}}
+</div>
+{{/each}}
+
+<div class="page-header">
+    <h1>Aktuális receptek</h1>
+</div>
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>Időpont</th>
+            <th>Státusz</th>
+            <th>Recept neve</th>
+            <th>Készítette</th>
+            <th>Elkészítés módja</th>
+            <th>Lehetőségek</th>
+        </tr>   
+    </thead>
+    <tbody>
+        {{#each recipes}}
+        <tr>
+            <td>{{date}}</td>
+            <td><span class="label label-{{statusClass}}">{{statusText}}</span></td>
+            <td>{{title}}</td>
+            <td>{{created}}</td>
+            <td><span class="badge">{{numberOfMessages}}</span> {{description}}</td>
+            <td><a class="btn btn-danger btn-sm" href="/recipes/delete/{{id}}" role="button">Törlés</a>
+                <a class="btn btn-warning btn-sm" href="/recipes/edit/{{id}}" role="button">Szerkesztés</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<p><a href="/recipes/new" class="btn btn-default">Új recept felvétele</a></p>
