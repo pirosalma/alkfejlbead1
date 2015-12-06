@@ -87,6 +87,17 @@
         "createdAt": "2015-12-05T21:29:12.946Z",
         "updatedAt": "2015-12-05T21:29:12.946Z",
         "id": 9
+      },
+      {
+        "username": "a",
+        "surname": "a",
+        "forename": "a",
+        "password": "$2a$10$mxFvZ9/WPV3a0vhIMai/LuJBEA8fRO2ZDJsvKw2Cg4MOaAacNrAC2",
+        "avatar": "",
+        "role": "user",
+        "createdAt": "2015-12-06T17:11:08.840Z",
+        "updatedAt": "2015-12-06T17:11:08.840Z",
+        "id": 10
       }
     ]
   },
@@ -167,7 +178,7 @@
       "id": 2
     },
     "user": {
-      "id": 9
+      "id": 10
     },
     "recipe": {
       "id": 14

@@ -19,9 +19,10 @@
 + Gyors működés.
 + Biztonságos működés: jelszavak titkosított tárolás.
 + Állandó rendelkezésre állás (heroku)
- 
+
 ### Szerepkörök
 
++ Vendég: Nem bejelentkezett felhasználó, láthatja a főaldalat, a bejelentkezés és regisztrációt.
 + User: Listázhatja a saját/összes recepteket, tudja törölni és szerkeszteni a sajátjait.
 + Admin: Hasonló a User-hez, de mindenkiét tudja szerkeszteni és törölni.
 
@@ -31,18 +32,18 @@
 
 **Új recept felvitele folyamat diagram**
 
-![Új recept felvitele folyamat diagram](docs/images/uj-feladat-hozzaadasa.png)
+![Új recept felvitele folyamat diagram](docs/images/uj_recept_folyamat.png)
 
 ## Tervezés
 
 ### Oldaltérkép
 
-Publikus:
+Látogatóknak:
 + Főoldal
-+ Login
++ Bejelentkezés
 + Regisztráció
 
-Felhasználó:
+Felhasználóknak:
 + Főoldal
 + Login/Logout
 + Receptek listája
@@ -50,7 +51,7 @@ Felhasználó:
     + Saját recept szerkesztése
     + saját recept törlése
 
-Felhasználó:
+Admin:
 + Főoldal
 + Login/Logout
 + Receptek listája
@@ -60,63 +61,59 @@ Felhasználó:
 	
 ### Végpontok
 
-+ GET /: főoldal
-+ GET /login: bejelentkező oldal
-+ POST /login: bejelentkezési adatok felküldése
-+ GET /login/signup: regisztációs oldal
-+ POST /login/sugnup: regisztációs adatok felküldése
-+ GET /todos/list: feladatlista oldal
-+ GET /todos/new: új feladat oldal
-+ POST /todos/new: új feladat felvitele
-+ GET /todos/delete/:id: feladat törlése
-+ GET /todos/edit/:id: feladat szerkesztése
-+ POST /todos/edit:id: feladat szerkesztésének felküldése
++ GET / - főoldal, üdvözlő képernyő
++ GET /logout - kijelentkezés
++ GET /about - rövid ismertető
++ GET /profile - saját profil megtekintése
++ GET /login - bejelentkező oldal
++ POST /login - bejelentkezési adatok felküldése
++ GET /login/signup - regisztációs oldal
++ POST /login/sugnup - regisztációs adatok felküldése
++ GET /recipes/list - receptek lista oldal
++ GET /recipes/list - saját receptek lista oldal
++ GET /recipes/new - új recept oldal
++ POST /recipes/new - új recept felvitele
++ GET /recipes/delete/:id - recept törlése
++ GET /recipes/edit/:id - recept szerkesztése
++ POST /recipes/edit:id - recept szerkesztésének felküldése
  
 ### Oldalvázlatok
 
-**Regisztrációs oldal**
+**Főoldal**
 
-![Regisztrációs oldal vázlata](docs/images/Regisztráció.jpg)
+![Főoldal vázlata](docs/images/main.PNG)
 
 **Bejelentkezés oldal**
 
-![Bejelentkezés oldal vázlata](docs/images/Bejelentkezés.jpg)
+![Bejelentkezés oldal vázlata](docs/images/login.PNG)
 
-**Feladatok listaoldal**
+**Receptek listaoldal**
 
-![Feladatok listaoldal vázlata](docs/images/Todo_list.jpg)
+![Receptek listaoldal vázlata](docs/images/recept.PNG)
 
-**Új feladat létrehozása és módosítása oldal**
+**Új recept létrehozása**
 
-![Új feladat létrehozása és módosítása oldal vázlata](docs/images/Új_feladat.jpg)
+![Új recept létrehozása oldal vázlata](docs/images/ujrecept.PNG)
+
+**Profil oldal**
+
+![Profil oldal vázlata](docs/images/profil.PNG)
 
 ### Designtervek
 
-**Feladatok listaoldal design számítógépen**
+**Receptek listaoldal design számítógépen**
 
-![Feladatok listaoldal design számítógépen](docs/images/Desktop.PNG)
+![Receptek listaoldal design számítógépen](docs/images/desktop1.png)
 
-**Új feladat design számítógépen**
+**Új recept design számítógépen**
 
-![Új feladat design számítógépen](docs/images/desktop_új_feladat.PNG)
+![Új recept design számítógépen](docs/images/desktop2.png)
 
-**Bejelentkezés okostelefonon (LG G3)**
-
-![Bejelentkezés okostelefonon (LG G3)](docs/images/phone.jpg)
-
-A design megvalósítása Bootstrap segítségével történt a reszponzív felület elérésének érdekében. A weboldal többi oldalára is hasonló elrendezések érvényesek.
+A design megvalósítása Bootstrap segítségével történt a reszponzív felület elérésének könnyű kezelése érdekében. A weboldal többi oldalára is hasonló elrendezések érvényesek.
 
 ## Adatmodell
 
 ![Adatmodell diagramja](docs/images/adatmodell.png)
-
-## Adatbázisterv
-
-![Adatbázis diagramja](docs/images/database.png)
- 
-## Állapotdiagram
-
-![Feladatok állapotdiagramja](docs/images/status.png)
 
 ## Implementáció
 
@@ -137,42 +134,13 @@ A virtuális gép adatai:
 + Root: Tartalmazza a telepítésekhez szükséges bower.json és package.json fájlokat, valamint a futtatható server.js fájlt.
 + bower_components: Kliens oldali függőségek ide töltődnek le.
 + config: Tartalmazza az waterline.js (sails.js) ORM konfigurációs fájlát.
-+ controllers: Az egyes oldalak funkcióit implementáló fájlokat (végpontokat) tartalmazza, valamint egy felhasználó regisztrációs tesztet.
-+ docs: Tartalmazza a dokumentációhoz tartozó képeket.
-+ models: Az applikáció modelljei, melyekkel dolgozunk majd az oldalon.
++ controllers: Az egyes oldalak funkcióit implementáló fájlokat (végpontokat) tartalmazza.
++ docs/images: Tartalmazza a dokumentációhoz tartozó képeket.
++ models: Az applikáció modelljei, melyekkel dolgozunk az oldalon.
 + node_modules: Tartalmazza a Node.js működését kiegészítő packageket. (middlewarek)
-+ viewmodels: Tartalmazza a feladatok dekorációját elősegítő fájlt.
 + views: Tartalmazza a megjelenítendő oldalakat leíró handlebars fájlokat.
++ test: Tartalmazza a teszteket.
 
-## Tesztelés
-
-A tesztelés **mocha** keretrendszerrel és **chai.js** (egységtesztekhez), valamint **zombie.js** (funkcionális tesztekhez) ellenőrző könyvtárakkal lett megvalósítva.
-
-### Futtatható tesztek
-
-+ Funkcionális tesztek: mocha controllers/index.test.js
-+ Egységtesztek: mocha models/member.test.js
-
-### member.test.js
-
-+ Megpróbál a megadott felhasználói adatok alapján új felhasználót létrehozni.
-  - Hibás regisztrációs adatok esetén hibaüzenetet vár.
-+ Megpróbál megtalálni egy felhasználót.
-+ Helyes megadott jelszó esetén igazat vár.
-+ Hibás megadott jelszó esetén hamisat vár.
-
-### index.test.js
-
-+ Nem regisztrált felhasználó a főoldalra kerül először, ahol látnia kell az üdvözlő szöveget.
-+ Nem regisztrált felhasználó megpróbál új feladatot hozzáadni:
-  - Ekkor átirányításra kerül a bejelentkezési oldalra.
-+ Az átirányítási oldalon megpróbál bejelentkezni.
-  - Hibás bejelentkezési adatok esetén visszakerül a bejelentkező oldalra hibaüzenettel.
-  - A megfelelő bejelentkezési adatok esetén bejelentkezik és látja az eddig hozzáadott feladatok listáját.
-+ Átmegy az új feladat felvétele oldalra.
-+ Megpróbált új feladatot hozzáadni.
-  - Üres mező esetén hibaüzenettel visszakerül ugyanarra az oldalra.
-  - Kitöltött mezők esetén a feladatot elmentjük és a felhasználó visszakerül a lista oldalra, ahol látja az újonnan létrehozott feladat adatait.
 
 ## Felhasználói dokumentáció
 
@@ -184,37 +152,36 @@ A weboldal bármilyen HTML5-t támogató böngészőben megjeleníthető és has
 
 ### Telepítés
 
-A teljes weboldal megtalálható a http://bead1-ce0ta3.herokuapp.com/ webdoldalon.
+A teljes weboldal megtalálható a http://asdbeadando1.herokuapp.com/ webdoldalon.
 
 Ha mégis saját gépen szeretné futtatni az alkalmazást, akkor a GIT Repository jobb oldalán található Download ZIP gombra kattintva a teljes project letölthető tömörítve.
 
 ### A program használata
 
-A http://bead1-ce0ta3.herokuapp.com/ weboldalra navigálva láthatunk egy üdvözlő szöveget.
+A http://asdbeadando1.herokuapp.com/ weboldalra navigálva láthatunk egy üdvözlő szöveget.
 
 A képernyő jobb-felső sarkában található **Bejelentkezés** gombra kattintva elérhető a bejelentkezési felület.
 
 Itt több választásunk is van:
 
-+ Bejelentkezhetünk Google+ fiókkal, ekkor nincs szükség regisztrációra. (FIGYELEM: Ez az opció csak ezen az online felületen működik. Saját gépre letöltve a projectet, nem fog működni.)
 + Bejelentkezhetünk már meglévő felhasználói nevünkkel és jelszavunkkal (ha már van).
 + A Regisztráció gombra kattintva regisztrálhatunk az oldalra.
 
-A regisztrációs oldalon minden mező kötelezően kitöltendő. Kitöltés után az **ELKÜLD** gombra kattintva végleges a regisztráció.
+A regisztrációs oldalon minden mező kötelezően kitöltendő, kivéve az avatar. Kitöltés után az **ELKÜLD** gombra kattintva végleges a regisztráció.
 
-Későbbiekben az itt megadott adatokkal tudunk majd bejelentkezni. Most, át lettünk irányítva a feladatok listájának oldalára.
+Későbbiekben az itt megadott adatokkal tudunk majd bejelentkezni. Most, át lettünk irányítva a receptek listájának oldalára.
 
-Itt láthatjuk az eddig felvitt feladatokat kategóriánként *új, kész, elmaradt* csoportosítva.
+Itt láthatjuk az eddig felvitt recepteket.
 
-Az új feladat felvitele gombra kattintva vehetünk fel új teendőt.
+Az új recept felvitele gombra kattintva vehetünk fel új receptet.
 
-Minden mező kitöltése kötelező, a **MENTÉS** gombra kattintva elmenthetjük a teendőt.
+Minden mező kitöltése kötelező, a **MENTÉS** gombra kattintva elmenthetjük a receptet.
 
-Ekkor visszatérünk ismét a feladatok oldalára és láthatjuk a frissen felvett teendőt. A teendő jobb oldalán található két gomb **SZERKESZT** és **TÖRLÉS**.
+Ekkor visszatérünk ismét a rececptek oldalára és láthatjuk a frissen felvett receptet. A recept jobb oldalán található két gomb **SZERKESZTÉS** és **TÖRLÉS**.
 
-A **SZERKESZT** gombra kattintva a már előbb megismert oldalra kerülünk, ahol szerkeszthetjük a feladat adatait.
+A **SZERKESZTÉS** gombra kattintva a már előbb megismert új recept oldalhoz hasonló odlalra kerülünk, ahol szerkeszthetjük a recept adatait.
 
-A **TÖRÖL** gombra kattintva törölhetjük az adott feladatot.
+A **TÖRÖL** gombra kattintva törölhetjük az adott receptet.
 
 Ha már nem szeretnénk több dolgot csinálni a honlapon, a jobb felsős sarokban található **KILÉPÉS** gombra kattintva kiléphetünk az oldalról.
 

@@ -2,23 +2,6 @@
 var express = require('express');
 var router = express.Router();
 
-//Viewmodel réteg
-/*
-var statusTexts = {
-    'new': 'Új',
-    'assigned': 'Hozzárendelve',
-    'ready': 'Kész',
-    'rejected': 'Elutasítva',
-    'pending': 'Felfüggesztve',
-};
-var statusClasses = {
-    'new': 'danger',
-    'assigned': 'info',
-    'ready': 'success',
-    'rejected': 'default',
-    'pending': 'warning',
-};
-*/
 function addDisables(recipeContainer,req) {
     return recipeContainer.map(function (e) {
         e.canRemove = "";
@@ -90,13 +73,11 @@ router.post('/new', function (req, res) {
     console.log(validationErrors);
     
     if (validationErrors) {
-        // űrlap megjelenítése a hibákkal és a felküldött adatokkal
         req.flash('validationErrors', validationErrors);
         req.flash('data', req.body);
         res.redirect('/recipes/new');
     }
     else {
-        // adatok elmentése (ld. később) és a hibalista megjelenítése
         req.app.models.recipe.create({
             created: req.user.username,
             title: req.body.cim,
@@ -122,7 +103,7 @@ router.post('/edit/:id', function (req, res) {
     console.log(validationErrors);
     
     if (validationErrors) {
-        // űrlap megjelenítése a hibákkal és a felküldött adatokkal
+        
         req.flash('validationErrors', validationErrors);
         req.flash('data', req.body);
         res.redirect('/recipes/edit/'+id);
