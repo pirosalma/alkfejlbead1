@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 //Viewmodel réteg
+/*
 var statusTexts = {
     'new': 'Új',
     'assigned': 'Hozzárendelve',
@@ -17,20 +18,23 @@ var statusClasses = {
     'rejected': 'default',
     'pending': 'warning',
 };
-
-function decorateErrors(errorContainer) {
-    return errorContainer.map(function (e) {
-        e.statusText = statusTexts[e.status];
-        e.statusClass = statusClasses[e.status];
+*/
+function addDisables(recipeContainer,req) {
+    return recipeContainer.map(function (e) {
+        e.canRemove = "";
+        e.canModify = "";
+        if(req.user.role !== "admin" && req.user.username !== e.created){
+            e.canRemove = "disabled";
+            e.canModify = "hidden";
+        }
         return e;
     });
 }
-
 router.get('/list', function (req, res) {
     req.app.models.recipe.find().then(function (recipes) {
         
         res.render('recipes/list', {
-            recipes: decorateErrors(recipes),
+            recipes: addDisables(recipes,req),
             messages: req.flash('info'),
         });
     });
@@ -39,7 +43,7 @@ router.get('/mylist', function (req, res) {
     req.app.models.recipe.find().then(function (recipes) {
         var myRecipes = recipes.filter(function (el) { return el.created === req.user.username; });
         res.render('recipes/list', {
-            recipes: decorateErrors(myRecipes),
+            recipes: addDisables(recipes,req),
             messages: req.flash('info'),
         });
     });
@@ -54,6 +58,8 @@ router.get('/new', function (req, res) {
     });
 });
 router.get('/edit/:id', function (req, res) { //szerkesztés
+    var validationErrors = (req.flash('validationErrors') || [{}]).pop();
+    //var data = (req.flash('data') || [{}]).pop();
     var id = req.params.id;
     req.app.models.recipe.find().then(function (recipes) {
         for(var i = 0; i < recipes.length;i++){
@@ -62,6 +68,7 @@ router.get('/edit/:id', function (req, res) { //szerkesztés
             }
         }
         res.render('recipes/edit', {
+            validationErrors: validationErrors,
             data: data,
         });
     });
@@ -91,7 +98,6 @@ router.post('/new', function (req, res) {
     else {
         // adatok elmentése (ld. később) és a hibalista megjelenítése
         req.app.models.recipe.create({
-            status: 'new',
             created: req.user.username,
             title: req.body.cim,
             description: req.body.leiras
@@ -106,6 +112,7 @@ router.post('/new', function (req, res) {
     }
 });
 router.post('/edit/:id', function (req, res) {
+    var id = req.params.id;
     // adatok ellenőrzése
     req.checkBody('cim', 'Hibás helyszín').notEmpty().withMessage('Kötelező megadni!');
     req.sanitizeBody('leiras').escape();
@@ -118,15 +125,10 @@ router.post('/edit/:id', function (req, res) {
         // űrlap megjelenítése a hibákkal és a felküldött adatokkal
         req.flash('validationErrors', validationErrors);
         req.flash('data', req.body);
-        res.redirect('/recipes/edit/'+req.body.id);
+        res.redirect('/recipes/edit/'+id);
     }
     else {
-        // adatok elmentése (ld. később) és a hibalista megjelenítése
-        req.app.models.recipe.destroy({id: req.body.id})
-        .then(function (deletedRecipes) {
-            req.app.models.recipe.create({
-                status: 'new',
-                created: req.user.username,
+            req.app.models.recipe.update({id: id},{
                 title: req.body.cim,
                 description: req.body.leiras
             })
@@ -137,8 +139,6 @@ router.post('/edit/:id', function (req, res) {
             .catch(function (err) {
                 console.log(err);
             });
-        });
-        
     }
 });
 

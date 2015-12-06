@@ -13,7 +13,6 @@
     <thead>
         <tr>
             <th>Időpont</th>
-            <th>Státusz</th>
             <th>Recept neve</th>
             <th>Készítette</th>
             <th>Elkészítés módja</th>
@@ -23,13 +22,14 @@
     <tbody>
         {{#each recipes}}
         <tr>
+             {{canRemove}}
             <td>{{date}}</td>
-            <td><span class="label label-{{statusClass}}">{{statusText}}</span></td>
+            
             <td>{{title}}</td>
             <td>{{created}}</td>
             <td><span class="badge">{{numberOfMessages}}</span> {{description}}</td>
-            <td><a class="btn btn-danger btn-sm" href="/recipes/delete/{{id}}" role="button">Törlés</a>
-                <a class="btn btn-warning btn-sm" href="/recipes/edit/{{id}}" role="button">Szerkesztés</a></td>
+            <td><a class="btn btn-danger btn-sm {{canRemove}}" href="/recipes/delete/{{id}}" role="button">Törlés</a>
+                <a class="btn btn-warning btn-sm  {{canRemove}}" href="/recipes/edit/{{id}}" role="button">Szerkesztés</a></td>
         </tr>
         {{/each}}
     </tbody>

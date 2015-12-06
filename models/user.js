@@ -26,7 +26,7 @@ module.exports = {
         },
         role: {
             type: 'string',
-            enum: ['user', 'operator','admin'],
+            enum: ['user', 'admin'],
             required: true,
             defaultsTo: 'user'
         },

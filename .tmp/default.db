@@ -1,38 +1,16 @@
 {
   "data": {
-    "error": [
-      {
-        "status": "new",
-        "location": "PC06",
-        "description": "Para van a szabad strandon",
-        "date": "2015-11-05T16:40:10.744Z",
-        "createdAt": "2015-11-05T16:40:10.745Z",
-        "updatedAt": "2015-11-05T16:40:10.745Z",
-        "id": 1
-      },
-      {
-        "status": "new",
-        "location": "qqqqqqqqqqqqqqq",
-        "description": "ddddddddddddddd",
-        "date": "2015-11-06T23:42:32.187Z",
-        "createdAt": "2015-11-06T23:42:32.188Z",
-        "updatedAt": "2015-11-06T23:42:32.188Z",
-        "id": 2
-      }
-    ],
     "recipe": [
       {
-        "status": "new",
         "created": "proba",
         "title": "Valami",
         "description": "nagyonfinom",
         "date": "2015-11-08T19:40:43.178Z",
         "createdAt": "2015-11-08T19:40:43.180Z",
-        "updatedAt": "2015-11-08T19:40:43.180Z",
+        "updatedAt": "2015-12-05T23:26:31.614Z",
         "id": 4
       },
       {
-        "status": "new",
         "created": "proba",
         "title": "gyros",
         "description": "jó gyorsan",
@@ -42,17 +20,6 @@
         "id": 5
       },
       {
-        "status": "new",
-        "created": "aaaaaa",
-        "title": "csilisbab",
-        "description": "asdlasdlas,dlas,dl,asld,asld,",
-        "date": "2015-11-08T19:48:46.005Z",
-        "createdAt": "2015-11-08T19:48:46.006Z",
-        "updatedAt": "2015-11-08T19:48:46.006Z",
-        "id": 6
-      },
-      {
-        "status": "new",
         "created": "proba",
         "title": "Spagetti",
         "description": "pikkpakkkkk",
@@ -62,94 +29,43 @@
         "id": 10
       },
       {
-        "status": "new",
         "created": "proba",
         "title": "Pizza",
-        "description": "blabalbalba",
+        "description": "blabalbalba123123123",
         "date": "2015-11-15T21:18:27.583Z",
         "createdAt": "2015-11-15T21:18:27.585Z",
-        "updatedAt": "2015-11-15T21:18:27.585Z",
+        "updatedAt": "2015-12-05T23:07:22.142Z",
         "id": 11
+      },
+      {
+        "created": "proba",
+        "title": "csilisbabbbb",
+        "description": "qweqweqweqw",
+        "date": "2015-12-05T18:32:45.363Z",
+        "createdAt": "2015-12-05T18:32:45.365Z",
+        "updatedAt": "2015-12-05T23:09:50.714Z",
+        "id": 12
+      },
+      {
+        "created": "aaaaaa",
+        "title": "ujrecept",
+        "description": "hihihihih :)",
+        "date": "2015-12-05T19:31:29.484Z",
+        "createdAt": "2015-12-05T19:31:29.487Z",
+        "updatedAt": "2015-12-05T19:31:29.487Z",
+        "id": 13
+      },
+      {
+        "created": "pirosalma",
+        "title": "jujdefinom",
+        "description": "nemtommá hogyvolt",
+        "date": "2015-12-05T23:28:56.174Z",
+        "createdAt": "2015-12-05T23:28:56.175Z",
+        "updatedAt": "2015-12-05T23:40:05.702Z",
+        "id": 14
       }
     ],
     "user": [
-      {
-        "surname": "K",
-        "forename": "K",
-        "neptun": "SHSVOS",
-        "password": "almafa",
-        "avatar": "",
-        "role": "operator",
-        "createdAt": "2015-10-16T07:12:13.282Z",
-        "updatedAt": "2015-10-16T07:12:13.282Z",
-        "id": 1
-      },
-      {
-        "surname": "K",
-        "forename": "S",
-        "neptun": "AAAA",
-        "password": "$2a$10$gNRMti2HhU01HMDWqwsJEOaQYF8pY63KxF3qRkfS7i0OuvIoOrQfq",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-10-16T07:35:52.625Z",
-        "updatedAt": "2015-10-16T07:35:52.625Z",
-        "id": 2
-      },
-      {
-        "surname": "k",
-        "forename": "k",
-        "neptun": "k",
-        "password": "$2a$10$0xivpgSpGiQmMlXXiCdK6.JHUDBZy.3QD2LqTYYqSCuJ64rAs5WCy",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-11-05T16:39:44.223Z",
-        "updatedAt": "2015-11-05T16:39:44.223Z",
-        "id": 3
-      },
-      {
-        "surname": "asd",
-        "forename": "dsa",
-        "neptun": "AOEGKK",
-        "password": "$2a$10$jhPyjTAn8ujkCS8t9zYpqOUFdAstPInTa6aq.liOAzmtqDmy8S9VS",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-11-06T23:41:46.090Z",
-        "updatedAt": "2015-11-06T23:41:46.090Z",
-        "id": 4
-      },
-      {
-        "surname": "aaaaaa",
-        "forename": "aaaaa",
-        "neptun": "aaaaaa",
-        "password": "$2a$10$HgzVudXzAmTu5b2zkZ0zxOdSI477mfuMptIXlywA/snHndNPoOkdK",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-11-06T23:43:35.248Z",
-        "updatedAt": "2015-11-06T23:43:35.248Z",
-        "id": 5
-      },
-      {
-        "username": "proba",
-        "surname": "prb",
-        "forename": "oa",
-        "password": "$2a$10$53MCyoYT7HLIquDs4G7DcujAwpYa0BLMB96surga2HSM.BzimUeyG",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-11-07T22:38:40.589Z",
-        "updatedAt": "2015-11-07T22:38:40.589Z",
-        "id": 6
-      },
-      {
-        "username": "aaaaaa",
-        "surname": "asd",
-        "forename": "dsa",
-        "password": "$2a$10$KA7aqmscTyquqKdTbEiMAe/Mu5T.CZTDY7t4iwFYA91hWiNKgxDt.",
-        "avatar": "",
-        "role": "riporter",
-        "createdAt": "2015-11-08T18:48:07.048Z",
-        "updatedAt": "2015-11-08T18:48:07.048Z",
-        "id": 7
-      },
       {
         "username": "pirosalma",
         "surname": "Kovács",
@@ -160,62 +76,24 @@
         "createdAt": "2015-11-10T22:23:45.260Z",
         "updatedAt": "2015-11-10T22:23:45.260Z",
         "id": 8
+      },
+      {
+        "username": "admin",
+        "surname": "admin",
+        "forename": "admin",
+        "password": "$2a$10$5FwfIF3qOTzV035/fzME6.6nA6kf48/V0SDy3n8kZkJJDS/965Nu.",
+        "avatar": "https://cdn2.iconfinder.com/data/icons/danger-problems/512/anonymous-512.png",
+        "role": "admin",
+        "createdAt": "2015-12-05T21:29:12.946Z",
+        "updatedAt": "2015-12-05T21:29:12.946Z",
+        "id": 9
       }
     ]
   },
   "schema": {
-    "error": {
-      "date": {
-        "type": "datetime"
-      },
-      "status": {
-        "type": "string",
-        "enum": [
-          "new",
-          "assigned",
-          "success",
-          "rejected",
-          "pending"
-        ]
-      },
-      "location": {
-        "type": "string"
-      },
-      "description": {
-        "type": "string"
-      },
-      "user": {
-        "type": "integer",
-        "model": "user",
-        "foreignKey": true,
-        "alias": "user"
-      },
-      "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
-      },
-      "createdAt": {
-        "type": "datetime"
-      },
-      "updatedAt": {
-        "type": "datetime"
-      }
-    },
     "recipe": {
       "date": {
         "type": "datetime"
-      },
-      "status": {
-        "type": "string",
-        "enum": [
-          "new",
-          "assigned",
-          "success",
-          "rejected",
-          "pending"
-        ]
       },
       "title": {
         "type": "string"
@@ -266,7 +144,6 @@
         "type": "string",
         "enum": [
           "user",
-          "operator",
           "admin"
         ],
         "defaultsTo": "user"
@@ -290,10 +167,10 @@
       "id": 2
     },
     "user": {
-      "id": 8
+      "id": 9
     },
     "recipe": {
-      "id": 11
+      "id": 14
     }
   }
 }
