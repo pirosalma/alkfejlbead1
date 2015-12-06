@@ -113,13 +113,13 @@ A design megvalósítása Bootstrap segítségével történt a reszponzív fel�
 
 ## Adatmodell
 
-![Adatmodell diagramja](docs/images/adatmodell.png)
+![Adatmodell diagramja](docs/images/Adatmodell.png)
 
 ## Implementáció
 
 ### Fejlesztői környezet
 
-https://c9.io/oltier/ce0ta3_bead1
+https://ide.c9.io/pirosalma/beadando1
 
 Cloud9 IDE egy ingyenes, integrált online fejlesztői környezet. Több száz programozási nyelvet támogat pl.: PHP, JavaScript, Node.js. A fejlesztők egy online virtuális linux gépen dolgozhatnak, ugyanazon a projecten akár egyszerre többen is. Az elkészült kódot azonnal lehet futtatni, rendelkezik böngészőtámogatással.
 
