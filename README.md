@@ -141,6 +141,25 @@ A virtuális gép adatai:
 + views: Tartalmazza a megjelenítendő oldalakat leíró handlebars fájlokat.
 + test: Tartalmazza a teszteket.
 
+## Tesztelés
+
+A tesztelés **mocha** keretrendszerrel valamint **zombie.js** (funkcionális tesztekhez) ellenőrző könyvtárakkal lett megvalósítva.
+
+### Futtatható tesztek
+
++ Funkcionális tesztek: mocha test/functional.test.js
+
+### functional.test.js
+
++ Nem regisztrált felhasználó a főoldalra kerül először, ahol látnia kell az üdvözlő szöveget.
++ Nem regisztrált felhasználó megpróbál új receptet hozzáadni:
+  - Ekkor átirányításra kerül a bejelentkezési oldalra.
++ Az átirányítási oldalon megpróbál bejelentkezni.
+  - Hibás bejelentkezési adatok esetén visszakerül a bejelentkező oldalra hibaüzenettel.
+  - A megfelelő bejelentkezési adatok esetén bejelentkezik és látja az eddig hozzáadott receptek listáját.
++ Átmegy az új recept felvétele oldalra.
++ Megpróbált új receptet hozzáadni.
+  - Üres mező esetén hibaüzenettel visszakerül ugyanarra az oldalra.
 
 ## Felhasználói dokumentáció
 
@@ -184,7 +203,3 @@ A **SZERKESZTÉS** gombra kattintva a már előbb megismert új recept oldalhoz 
 A **TÖRÖL** gombra kattintva törölhetjük az adott receptet.
 
 Ha már nem szeretnénk több dolgot csinálni a honlapon, a jobb felsős sarokban található **KILÉPÉS** gombra kattintva kiléphetünk az oldalról.
-
-
-
-
